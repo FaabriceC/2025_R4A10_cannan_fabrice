@@ -1,0 +1,5 @@
+<div class="card-list">
+    @for (card of cards; track $index) {
+        <app-card [title]="card.title" [description]="card.description" [icon]="card.icon"/>
+    }
+</div>

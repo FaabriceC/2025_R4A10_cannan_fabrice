@@ -8,3 +8,15 @@
   text-align: center;
   color: #6c757d;
 }
+
+.button-container {
+  display: flex;
+  justify-content: center;
+}
+
+.small-line {
+  width: 3rem;
+  height: 2px;
+  background-color: black;
+  margin: 10px auto;
+}
