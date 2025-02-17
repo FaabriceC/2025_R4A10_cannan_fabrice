@@ -6,7 +6,7 @@ import { ButtonComponent } from '../button/button.component';
   standalone: true, 
   imports: [ButtonComponent],
   templateUrl: './customer.component.html',
-  styleUrls: ['./customer.component.scss'],
+  styleUrls: ['./customer.component.css'],
 })
 export class CustomerComponent {
   feeds = [
