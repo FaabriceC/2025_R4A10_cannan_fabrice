@@ -1,0 +1,19 @@
+<div id="card">
+    <h1>What our customer are saying</h1>
+    <div class="small-line"></div>
+    <div id="content">
+        <img [src]="customer.image" id="img" />
+        <div id="info">
+            <h4>{{ customer.name }}</h4>
+            <p id="role">{{ customer.role }}</p>
+        </div>
+        <blockquote>
+            "{{ customer.message }}"
+        </blockquote>
+    </div>
+</div>
+<div id="controls">
+    <app-button button_text="<" (clicked)="previous()">←</app-button>
+    <app-button button_text=">" (clicked)="next()">→</app-button>
+</div>
+  

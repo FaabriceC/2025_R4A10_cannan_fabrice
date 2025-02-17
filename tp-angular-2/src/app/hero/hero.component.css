@@ -19,3 +19,28 @@
 .description {
   color: #6c757d;
 }
+
+@media screen and (max-width: 768px) {
+  .content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    padding: 5%;
+  }
+
+  .left-content, 
+  .right-content {
+    padding: 5% 0;
+    width: 100%;
+  }
+
+  .title {
+    font-size: 2em;
+  }
+
+  #img {
+    display: none;
+  }
+}
+

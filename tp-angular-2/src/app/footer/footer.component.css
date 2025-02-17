@@ -1,5 +1,90 @@
+
+* {
+    color: white;
+}
+
 .footer {
     background: linear-gradient(135deg, #67C3F3, #5A98F2); 
-    padding: 10%;
+    padding: 5% 10%;
     margin-top: 10%;
 }
+
+#logo {
+    width: 56px;
+    height: 50px;
+    object-fit: contain;
+}
+
+.logo-title {
+    display: flex;
+    align-items: center;
+    gap: 5px;
+}
+
+.title {
+    font-size: 1.5rem;
+}
+
+.content {
+    display: flex;
+}
+
+.left-content {
+    flex: 2;
+}
+
+.center-content {
+    flex: 1;
+}
+
+.company-content {
+    flex: 1;
+}
+
+.region-content {
+    flex: 1;
+}
+
+.help-content {
+    flex: 1;
+}
+
+li {
+    list-style: none;
+    text-decoration: none;
+    margin-bottom: 10%;
+    cursor: pointer;
+}
+
+@media screen and (max-width: 768px) {
+    .footer {
+      padding: 10% 5%;
+      text-align: center;
+    }
+  
+    .content {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 20px;
+    }
+  
+    .logo-title {
+      justify-content: center;
+    }
+  
+    .title {
+      font-size: 1.2rem;
+    }
+  
+    li {
+      margin-bottom: 5%;
+    }
+  
+    #logo {
+      width: 50px;
+      height: 45px;
+    }
+  }
+  
+
