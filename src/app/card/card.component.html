@@ -1,0 +1,39 @@
+<div class="card shadow-lg border-0 rounded-4 overflow-hidden">
+  <div class="card-body p-4">
+    <h5 class="card-title fw-bold text-primary">{{ voyage.destination }}</h5>
+
+    <p class="card-text text-muted">
+      {{ voyage.description | slice : 0 : 40 }}...
+    </p>
+
+    <span class="badge bg-success fs-6 py-2 px-3">
+      💰 {{ voyage.prix | currency : "EUR" }}
+    </span>
+
+    <div class="d-flex justify-content-between mt-4">
+      <a
+        [routerLink]="['/voyage', voyage.id]"
+        class="btn btn-outline-primary btn-sm rounded-pill px-4 shadow-sm"
+      >
+        Voir plus
+      </a>
+
+      <button
+        class="btn btn-outline-danger btn-sm rounded-pill px-4 shadow-sm"
+        data-bs-toggle="modal"
+        [attr.data-bs-target]="'#confirmDelete' + voyage.id"
+      >
+        Supprimer
+      </button>
+    </div>
+  </div>
+</div>
+
+<app-modal
+  [modalId]="'confirmDelete' + voyage.id"
+  [title]="'Supprimer le voyage'"
+  [message]="'Êtes-vous sûr de vouloir supprimer ce voyage ?'"
+  [confirmText]="'Supprimer'"
+  [cancelText]="'Annuler'"
+  (confirmed)="deleteVoyage()"
+></app-modal>

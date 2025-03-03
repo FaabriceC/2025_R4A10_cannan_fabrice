@@ -1,0 +1,25 @@
+@for (voyage of paginatedVoyages; track $index) {
+<app-card
+  [voyage]="voyage"
+  (voyageDeleted)="onVoyageDeleted(voyage.id)"
+></app-card>
+}
+<div class="pagination mt-4 d-flex justify-content-center p-5">
+  <button
+    class="btn btn-outline-primary"
+    [disabled]="currentPage === 1"
+    (click)="onPageChange(currentPage - 1)"
+  >
+    Précédent
+  </button>
+
+  <span class="mx-2 my-auto">Page {{ currentPage }} / {{ totalPages }}</span>
+
+  <button
+    class="btn btn-outline-primary"
+    [disabled]="currentPage === totalPages"
+    (click)="onPageChange(currentPage + 1)"
+  >
+    Suivant
+  </button>
+</div>
