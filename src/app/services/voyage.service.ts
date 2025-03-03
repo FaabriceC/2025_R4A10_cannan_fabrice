@@ -6,9 +6,20 @@ import { VOYAGES } from '../../models/voyage.data';
   providedIn: 'root',
 })
 export class VoyageService {
-  private voyages: Voyage[] = VOYAGES;
+  private voyages: Voyage[] = [];
 
-  constructor() {}
+  constructor() {
+    this.loadVoyages();
+  }
+
+  private saveVoyages(): void {
+    localStorage.setItem('voyages', JSON.stringify(this.voyages));
+  }
+
+  private loadVoyages(): void {
+    const storedVoyages = localStorage.getItem('voyages');
+    this.voyages = storedVoyages ? JSON.parse(storedVoyages) : VOYAGES;
+  }
 
   getVoyages(): Voyage[] {
     return this.voyages;
@@ -20,9 +31,11 @@ export class VoyageService {
 
   deleteVoyage(id: string): void {
     this.voyages = this.voyages.filter((voyage) => voyage.id !== id);
+    this.saveVoyages();
   }
 
   addVoyage(voyage: Voyage): void {
     this.voyages.push(voyage);
+    this.saveVoyages();
   }
 }
