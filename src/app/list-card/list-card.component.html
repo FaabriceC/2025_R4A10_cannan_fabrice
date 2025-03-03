@@ -6,7 +6,7 @@
 }
 <div class="pagination mt-4 d-flex justify-content-center p-5">
   <button
-    class="btn btn-outline-primary"
+    class="btn btn-outline-primary cursor-pointer"
     [disabled]="currentPage === 1"
     (click)="onPageChange(currentPage - 1)"
   >
@@ -16,7 +16,7 @@
   <span class="mx-2 my-auto">Page {{ currentPage }} / {{ totalPages }}</span>
 
   <button
-    class="btn btn-outline-primary"
+    class="btn btn-outline-primary cursor-pointer"
     [disabled]="currentPage === totalPages"
     (click)="onPageChange(currentPage + 1)"
   >
