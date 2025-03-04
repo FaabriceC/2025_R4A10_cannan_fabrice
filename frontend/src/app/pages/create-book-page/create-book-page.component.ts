@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, inject } from '@angular/core';
 import {
   FormControl,
   FormGroup,
@@ -15,27 +15,25 @@ import { BooksService } from '../../services/books/books.service';
   styleUrl: './create-book-page.component.css',
 })
 export class CreateBookPageComponent {
-  bookForm: FormGroup;
+  booksService: BooksService = inject(BooksService);
 
-  constructor(private booksService: BooksService) {
-    this.bookForm = new FormGroup({
-      author: new FormControl('', [
-        Validators.required,
-        Validators.minLength(5),
-        Validators.maxLength(50),
-      ]),
-      description: new FormControl('', [
-        Validators.required,
-        Validators.minLength(10),
-        Validators.maxLength(255),
-      ]),
-      title: new FormControl('', [
-        Validators.required,
-        Validators.minLength(2),
-        Validators.maxLength(35),
-      ]),
-    });
-  }
+  bookForm: FormGroup = new FormGroup({
+    author: new FormControl('', [
+      Validators.required,
+      Validators.minLength(5),
+      Validators.maxLength(50),
+    ]),
+    description: new FormControl('', [
+      Validators.required,
+      Validators.minLength(10),
+      Validators.maxLength(255),
+    ]),
+    title: new FormControl('', [
+      Validators.required,
+      Validators.minLength(2),
+      Validators.maxLength(35),
+    ]),
+  });
 
   onSubmit() {
     if (this.bookForm.valid) {
